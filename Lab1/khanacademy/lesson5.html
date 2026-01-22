@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Challenge: The overflowing ocean</title>
+        <style>
+    .info {
+    background: rgb(219, 235, 255);
+    width: 70%;
+    height: 200px;
+    overflow: auto; 
+}.pic {
+    width: 70%;    
+    height: auto;  
+}
+
+
+</style>
+
+    </head>
+    <body>
+    
+        <h1>The ocean</h1>
+        
+        <img class="pic" src="https://www.kasandbox.org/programming-images/landscapes/beach-in-hawaii.png" alt="Photo of rocky ocean beach in Hawaii">
+        
+        <div class="info">
+            <p>The <strong>ocean</strong> is the connected body of salty water that covers 70.8% of the Earth's surface. The sea moderates the Earth's climate and has important roles in the water cycle, carbon cycle, and nitrogen cycle. Although the sea has been travelled and explored since prehistory, the modern scientific study of the sea—oceanography—dates broadly to the British Challenger expedition of the 1870s. The sea is conventionally divided into four or five large sections, such as the Pacific, called oceans while smaller sections, such as the Mediterranean, are known as seas.
+            </p>
+            <p>
+    Owing to the present state of continental drift, the Northern Hemisphere is now fairly equally divided between land and sea (a ratio of about 2:3) but the South is overwhelmingly oceanic (1:4.7). Salinity in the open ocean is generally in a narrow band around 3.5% by mass, although this can vary in more landlocked waters, near the mouths of large rivers, or at great depths. About 85% of the solids in the open sea are sodium and chloride. Deep-sea currents are produced by differences in salinity and temperature. Surface currents are formed by the friction of waves produced by the wind and by tides, the changes in local sea level produced by the gravity of the Moon and Sun. The direction of all of these is governed by surface and submarine land masses and by the rotation of the Earth (the Coriolis effect).
+            </p>
+            
+            <a href="http://en.wikipedia.org/wiki/Sea">Read more on Wikipedia</a>
+        </div>
+        
+    </body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Challenge: The boxer model</title>
+        <style>
+            body {
+                font-family: cursive;
+            }
+            .photo-gallery {
+                background: rgb(255, 254, 217);
+            }
+         .photo {
+    width: 200px;
+    border: 5px solid #654321;
+    padding: 5px;
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+    margin: 10px; /* adds space around each photo */
+}
+
+.photo-gallery {
+    background: rgb(255, 254, 217);
+    padding: 20px; /* adds space inside the gallery around the images */
+}
+
+
+        </style>
+    </head>
+    <body>
+
+        <h1>Boxers are beautiful?</h1>
+        
+        <div class="photo-gallery">
+        
+            <img class="photo" src="https://www.kasandbox.org/programming-images/animals/boxer-getting-tan.png">
+            
+            <img class="photo" src="https://www.kasandbox.org/programming-images/animals/boxer-laying-down.png">
+            
+            <img class="photo" src="https://www.kasandbox.org/programming-images/animals/boxer-wagging-tongue.png">
+            
+        </div>
+        
+    </body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Challenge: Position planet</title>
+        <style>
+ #greeting {
+    position: absolute;   
+    top: 20px;            
+    left: 50px;           
+    background: rgb(255, 255, 0);
+    border: 2px solid black;
+    font-family: "Comic Sans MS", fantasy;
+    padding: 5px;
+    width: 262px;
+    z-index: 2;  /* makes sure greeting is on top */
+}
+
+#creature {
+    position: absolute;
+    top: 150px;
+    left: 100px;
+    width: 100px;
+    z-index: 1; /* lower than greeting */
+}
+
+
+            
+            #planet {
+    position: relative; /* reference for absolute positioning */
+}
+
+#creature {
+    position: absolute;
+    top: 150px; 
+    left: 100px;
+    width: 100px;
+}
+
+
+        </style>
+    </head>
+    <body>
+        
+        <img id="planet" src="https://www.kasandbox.org/programming-images/space/planet.png" width="300">
+        
+        <div id="greeting">
+            <p>Hello! Welcome to position planet!</p>
+        </div>
+        
+        <img id="creature" src="https://www.kasandbox.org/programming-images/avatars/mr-pink.png">
+        
+
+    </body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Challenge: Floating clouds</title>
+        <style>
+            body {
+                font-family: sans-serif;
+            }
+            h1 {
+                font-family: fantasy;
+            }
+#cloud-pic {
+    width: 100px;
+    float: left;              
+    margin: 0 15px 15px 0;    /* top:0, right:15px, bottom:15px, left:0 */
+}
+
+#cloud-sidebar {
+    width: 200px;             
+    float: right;             
+    background: rgb(255, 255, 219);
+    padding: 10px;            
+    margin: 0 0 15px 15px;    /* top:0, right:0, bottom:15px, left:15px */
+}
+
+        </style>
+    </head>
+    <body>
+    
+        <h1>What are clouds?</h1>
+
+        <img id="cloud-pic" src="https://www.kasandbox.org/programming-images/landscapes/clouds-from-plane.png">
+        
+        
+        <div id="cloud-sidebar">
+            <h5>Why are some clouds yellow?</h5>
+            <p>Yellowish clouds may occur in the late spring through early fall months during forest fire season. The yellow color is due to the presence of pollutants in the smoke. Yellowish clouds caused by the presence of nitrogen dioxide are sometimes seen in urban areas with high air pollution levels.
+            </p>
+        </div>
+        
+        <p>In meteorology, a cloud is a visible mass of liquid droplets or frozen crystals made of water or various chemicals suspended in the atmosphere above the surface of a planetary body. These suspended particles are also known as aerosols and are studied in the cloud physics branch of meteorology.</p>
+
+        <p>Terrestrial cloud formation is the result of air in Earth's atmosphere becoming saturated due to either or both of two processes: cooling of the air and adding water vapor. With sufficient saturation, precipitation will fall to the surface.</p>
+        
+        
+        <p><a href="http://en.wikipedia.org/wiki/Cloud">Read more on Wikipedia</a></p>
+        
+    </body>
+</html>
+
+
+<!-- project -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Event Invite</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #fff8e1; /* light cream */
+            color: #333;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ff6f61;      /* fun bright color for main title */
+            font-size: 3em;
+            margin-bottom: 0;
+        }
+
+        h2 {
+            color: #ffb74d;
+            font-size: 2em;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto 20px auto;
+            width: 150px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            max-width: 400px;
+            margin: 0 auto 20px auto;
+        }
+
+        ul li {
+            background: #fff3e0;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+            font-size: 1.1em;
+        }
+
+        a.rsvp {
+            display: inline-block;
+            background: #ff6f61;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        a.rsvp:hover {
+            background: #d84315;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>You're invited!</h1>
+    <h2>Summer Garden Party</h2>
+
+    <img src="https://www.kasandbox.org/programming-images/flowers/flower1.png" alt="flowers">
+
+    <p>Join us for a fun afternoon in the garden with friends, food, and games!</p>
+
+    <ul>
+        <li><strong>Date:</strong> June 15, 2026</li>
+        <li><strong>Time:</strong> 2:00 PM - 6:00 PM</li>
+        <li><strong>Location:</strong> 123 Sunshine Lane, Springfield</li>
+        <li><strong>Dress Code:</strong> Casual / Garden party attire</li>
+    </ul>
+
+    <a href="mailto:host@example.com" class="rsvp">RSVP Now</a>
+
+</body>
+</html>
