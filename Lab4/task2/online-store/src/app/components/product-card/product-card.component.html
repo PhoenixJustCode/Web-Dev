@@ -4,28 +4,28 @@
       <button
         class="nav-btn prev"
         (click)="prevImage()"
-        *ngIf="product.images.length > 1"
+        *ngIf="product().images.length > 1"
       >
         ‹
       </button>
       <img
-        [src]="product.images[currentImageIndex] || product.image"
-        [alt]="product.name"
+        [src]="product().images[currentImageIndex()] || product().image"
+        [alt]="product().name"
         class="main-image"
       />
       <button
         class="nav-btn next"
         (click)="nextImage()"
-        *ngIf="product.images.length > 1"
+        *ngIf="product().images.length > 1"
       >
         ›
       </button>
     </div>
-    <div class="thumbnails" *ngIf="product.images.length > 1">
+    <div class="thumbnails" *ngIf="product().images.length > 1">
       <img
-        *ngFor="let img of product.images; let i = index"
+        *ngFor="let img of product().images; let i = index"
         [src]="img"
-        [class.active]="i === currentImageIndex"
+        [class.active]="i === currentImageIndex()"
         (click)="selectImage(i)"
         class="thumbnail"
       />
@@ -34,21 +34,29 @@
 
   <div class="product-info">
     <h3 class="product-name">
-      <a [href]="product.link" target="_blank">{{ product.name }}</a>
+      <a [href]="product().link" target="_blank">{{ product().name }}</a>
     </h3>
-    <p class="product-description">{{ product.description }}</p>
+    <p class="product-description">{{ product().description }}</p>
 
     <div class="rating-price">
-      <div class="rating"><span class="star">★</span> {{ product.rating }}</div>
-      <div class="price">{{ product.price | number: "1.0-0" }} ₸</div>
+      <div class="rating">
+        <span class="star">★</span> {{ product().rating }}
+      </div>
+      <div class="likes" (click)="onLike()">
+        <span class="heart-icon">❤️</span> {{ product().likes }}
+      </div>
+      <div class="price">{{ product().price | number: "1.0-0" }} ₸</div>
     </div>
 
     <div class="actions">
       <button class="share-btn whatsapp" (click)="shareToWhatsApp()">
-        <span class="btn-icon"></span> Send via WhatsApp
+        <span class="btn-icon">📱</span> WhatsApp
       </button>
       <button class="share-btn telegram" (click)="shareToTelegram()">
-        <span class="btn-icon"></span> Send via Telegram
+        <span class="btn-icon">✈️</span> Telegram
+      </button>
+      <button class="delete-btn" (click)="onRemove()">
+        <span class="btn-icon">🗑️</span> Delete
       </button>
     </div>
   </div>

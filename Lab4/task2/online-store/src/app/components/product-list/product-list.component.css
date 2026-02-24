@@ -7,6 +7,29 @@
   margin: 0 auto;
 }
 
+.no-products {
+  text-align: center;
+  padding: 60px 20px;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  max-width: 500px;
+  margin: 40px auto;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.no-products-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+}
+
+.no-products p {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
 @media (max-width: 600px) {
   .product-grid {
     grid-template-columns: 1fr;

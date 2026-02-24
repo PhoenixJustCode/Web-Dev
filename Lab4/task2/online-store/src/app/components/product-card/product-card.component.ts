@@ -1,45 +1,56 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, output, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from '../../models/product.model';
 
 @Component({
-  selector: 'app-product-card',
+  selector: 'app-product-item',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.css',
 })
-export class ProductCardComponent {
-  @Input() product!: Product;
-  currentImageIndex: number = 0;
+export class ProductItemComponent {
+  product = input.required<Product>();
+  remove = output<number>();
+
+  currentImageIndex = signal(0);
 
   shareToWhatsApp() {
-    const url = encodeURIComponent(this.product.link);
+    const url = encodeURIComponent(this.product().link);
     window.open(`https://wa.me/?text=Check out this product: ${url}`, '_blank');
   }
 
   shareToTelegram() {
-    const url = encodeURIComponent(this.product.link);
-    const text = encodeURIComponent(this.product.name);
+    const url = encodeURIComponent(this.product().link);
+    const text = encodeURIComponent(this.product().name);
     window.open(`https://t.me/share/url?url=${url}&text=${text}`, '_blank');
   }
 
+  onLike() {
+    this.product().likes++;
+  }
+
+  onRemove() {
+    this.remove.emit(this.product().id);
+  }
+
   nextImage() {
-    if (this.product.images && this.product.images.length > 0) {
-      this.currentImageIndex =
-        (this.currentImageIndex + 1) % this.product.images.length;
+    const images = this.product().images;
+    if (images && images.length > 0) {
+      this.currentImageIndex.update((idx) => (idx + 1) % images.length);
     }
   }
 
   prevImage() {
-    if (this.product.images && this.product.images.length > 0) {
-      this.currentImageIndex =
-        (this.currentImageIndex - 1 + this.product.images.length) %
-        this.product.images.length;
+    const images = this.product().images;
+    if (images && images.length > 0) {
+      this.currentImageIndex.update(
+        (idx) => (idx - 1 + images.length) % images.length,
+      );
     }
   }
 
   selectImage(index: number) {
-    this.currentImageIndex = index;
+    this.currentImageIndex.set(index);
   }
 }

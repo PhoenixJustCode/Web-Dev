@@ -1,11 +1,51 @@
 <div class="app-container">
   <header class="app-header">
     <div class="header-content">
-      <h1>Premium Store</h1>
+      <h1>{{ title }}</h1>
+      <nav class="category-nav">
+        <button
+          *ngFor="let cat of categories()"
+          [class.active]="cat.id === selectedCategoryId()"
+          (click)="selectCategory(cat.id)"
+          class="cat-btn"
+        >
+          {{ cat.name }}
+        </button>
+      </nav>
     </div>
   </header>
 
   <main>
-    <router-outlet></router-outlet>
+    <div
+      *ngIf="selectedCategoryId() !== null; else welcome"
+      class="content-area"
+    >
+      <div class="category-header">
+        <h2>{{ selectedCategoryName() }}</h2>
+        <span class="product-count">{{ filteredProducts().length }} items</span>
+      </div>
+
+      <app-product-list
+        [products]="filteredProducts()"
+        (productRemoved)="onProductRemoved($event)"
+      ></app-product-list>
+    </div>
+
+    <ng-template #welcome>
+      <div class="welcome-screen">
+        <div class="welcome-icon">🛍️</div>
+        <h2>Welcome to Premium Store</h2>
+        <p>Select a category above to start shopping</p>
+        <div class="category-hints">
+          <div
+            class="hint"
+            *ngFor="let cat of categories()"
+            (click)="selectCategory(cat.id)"
+          >
+            {{ cat.name }} ➔
+          </div>
+        </div>
+      </div>
+    </ng-template>
   </main>
 </div>
