@@ -1,0 +1,21 @@
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #3f51b5;
+  margin-bottom: 2rem;
+}
+
+.info-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}

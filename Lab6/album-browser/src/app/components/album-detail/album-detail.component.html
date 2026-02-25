@@ -1,0 +1,43 @@
+<div *ngIf="loading" class="loading-indicator">
+  <span>Loading album details...</span>
+</div>
+
+<div *ngIf="!loading && album" class="detail-container">
+  <div class="actions-top">
+    <button class="btn-secondary" (click)="goBack()">← Back to Albums</button>
+  </div>
+
+  <div class="card">
+    <h2>Album Details</h2>
+    <div class="form-group">
+      <label>ID:</label>
+      <span>{{ album.id }}</span>
+    </div>
+    <div class="form-group">
+      <label>User ID:</label>
+      <span>{{ album.userId }}</span>
+    </div>
+    <div class="form-group">
+      <label>Title:</label>
+      <input type="text" [(ngModel)]="album.title" class="title-input" />
+    </div>
+
+    <div class="card-actions">
+      <button
+        class="btn-primary"
+        (click)="saveTitle()"
+        [disabled]="album.title === originalTitle"
+      >
+        Save Title
+      </button>
+      <button
+        class="btn-primary"
+        [routerLink]="['/albums', album.id, 'photos']"
+      >
+        View Photos
+      </button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!loading && !album" class="error-state">Album not found.</div>
